@@ -1,0 +1,12 @@
+services:
+
+  apache:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      # This variable will be used later in the apache conf.
+      # Without it, the default page will be shipped with
+      DOCUMENT_ROOT: /app
+    ports:
+      - "8080:80"
